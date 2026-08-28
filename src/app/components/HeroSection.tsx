@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ArrowRight, Download } from 'lucide-react'
+import Image from 'next/image'
 
 export default function HeroSection() {
   const ref = useRef(null)
@@ -134,19 +135,17 @@ export default function HeroSection() {
 
         {/* Right Column - Photo */}
         <div className="relative lg:col-span-5 w-full flex items-center justify-center pointer-events-auto">
-          <div className="relative w-full max-w-md aspect-[4/3] rounded-2xl p-1 bg-gradient-to-tr from-[#1B365D]/30 via-[#4A7FB5]/30 to-[#5B9BD5]/30 shadow-xl backdrop-blur-md border border-[#1B365D]/10">
+          <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl p-1 bg-gradient-to-tr from-[#1B365D]/30 via-[#4A7FB5]/30 to-[#5B9BD5]/30 shadow-2xl backdrop-blur-md border border-[#1B365D]/10">
             <div className="w-full h-full rounded-xl overflow-hidden bg-white relative">
-              {/* Placeholder - replace with actual photo */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-sky-100 to-blue-50 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#1B365D]/10 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-[#1B365D]/30">D</span>
-                  </div>
-                  <p className="text-sm text-[#1B365D]/40 font-medium">Photo Placeholder</p>
-                </div>
-              </div>
+              <Image
+                src="/images/profile.jpg"
+                alt="Dede Ahmad Fauzy"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-500"
+                priority
+              />
             </div>
-            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#5B9BD5] to-[#4A7FB5] opacity-15 blur-xl -z-10" />
+            <div className="absolute -inset-2 rounded-2xl bg-gradient-to-r from-[#5B9BD5] to-[#4A7FB5] opacity-25 blur-xl -z-10" />
           </div>
         </div>
       </motion.div>
